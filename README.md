@@ -1,5 +1,14 @@
 <h1>LeadSquared PHP library</h1>
+<h3>Setup</h3>
+<div class="highlight highlight-php"><pre>
+define('LSQ_NAME', '<-- Name Of your Project -->');
 
+define('LSQ_ACCESSKEY', '<-- LeadSquared Access Key -->');
+
+define('LSQ_SECRETKEY', '<-- LeadSquared Secret Key -->');
+
+$leadsquared = new Leadsquared_Api();
+</pre></div>
 <h3>Lead Management Examples</h3>
 <div class="highlight highlight-php"><pre>
 For Create Lead,Update Lead ,Create Or Update Lead and Convert Vistor to lead Json has to be changed from 
