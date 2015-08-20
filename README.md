@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[
-# ${1:LeadSquared PHP library}
+  <content>
+# LeadSquared PHP library
 
 This library provides an API to Create, Edit and find leads, Post activities on leads, and do Task management.
 
