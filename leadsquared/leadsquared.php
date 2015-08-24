@@ -256,7 +256,9 @@ class Leadsquared_Api{
 			}
 			if(	array_key_exists("Status",$array))
 			{
-				if( json_decode($response,true)['Status'] == 'Success' )
+				$array_json = json_decode($response,true);
+				$status = $array_json['Status'];
+				if( $status == 'Success' )
 				{
 					$log->info($response);
 				}
@@ -296,7 +298,9 @@ class Leadsquared_Api{
 			}
 			if(	array_key_exists("Status",$array))
 			{
-				if( json_decode($response,true)['Status'] == 'Error' )
+				$array_json = json_decode($response,true);
+				$status = $array_json['Status'];
+				if( $status == 'Error' )
 					{
 						$log->error($response);
 					}
