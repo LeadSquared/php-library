@@ -36,9 +36,9 @@ $leadsquared = new Leadsquared_Api();
 Lead Management 
 https://github.com/LeadSquared/php-library/wiki/Lead-Management
 
-Activity-Management
+Activity Management
 https://github.com/LeadSquared/php-library/wiki/Activity-Management
 
-Sales-Activity
+Sales Activity
 https://github.com/LeadSquared/php-library/wiki/Sales-Activity
 </snippet>
