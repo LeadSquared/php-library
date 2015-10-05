@@ -20,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$Phone = test_input($_POST["phone"]);
 	$leadId = test_input($_POST["ProspectID"]);
 	
-	$date = '{ 
-			"FirstName":". ' $FirstName '. ",
-			"EmailAddress":". ' $EmailAddress '. ",
-			"Phone":". ' $Phone '."
+	$data = '{ 
+			"FirstName":"'.$FirstName.'",
+			"EmailAddress":"'.$EmailAddress.'",
+			"Phone":"'.$Phone.'"
 			 }';
 			 
 	$leadsquared->update_lead($data,$leadId);

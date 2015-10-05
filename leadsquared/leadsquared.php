@@ -8,6 +8,7 @@ class Leadsquared_Api{
 		$this->name = LSQ_NAME;
 		$this->accessKey = LSQ_ACCESSKEY;
 		$this->secretKey = LSQ_SECRETKEY;
+		include('log4php/Logger.php');
 	}
 	
 	public function create_lead($data){
@@ -71,6 +72,13 @@ class Leadsquared_Api{
 	public function get_lead_by_email($email){
 		$url_base = 'https://api.leadsquared.com/v2/LeadManagement.svc';
 		$url = $url_base. '/Leads.GetByEmailaddress?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey . '&emailaddress=' . $email ;
+		$name = $this->name;
+		return Leadsquared_Api::lsqcurlget($url,$name);
+	}
+	
+	public function get_lead_by_id($id){
+		$url_base = 'https://api.leadsquared.com/v2/LeadManagement.svc';
+		$url = $url_base. '/Leads.GetById?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey . '&id=' . $id ;
 		$name = $this->name;
 		return Leadsquared_Api::lsqcurlget($url,$name);
 	}
@@ -320,7 +328,7 @@ class Leadsquared_Api{
 		}
 	}
 	public function leadsquared_log($name){
-		include('log4php/Logger.php');
+		
 		Logger::configure(array(
 		'appenders' => array(
 			'default' => array(
