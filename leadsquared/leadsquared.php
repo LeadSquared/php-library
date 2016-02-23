@@ -83,6 +83,13 @@ class Leadsquared_Api{
 		return Leadsquared_Api::lsqcurlget($url,$name);
 	}
 	
+	public function  send_schedule_email($json_data){
+		$url_base = 'https://api.leadsquared.com/v2/EmailMarketing.svc';
+		$url = $url_base. '/ScheduleEmailToLead?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey;
+		$name = $this->name;
+		return Leadsquared_Api::lsqcurl($url,$json_data,$name);
+	}
+	
 	public function quick_search($key){
 		$url_base = 'https://api.leadsquared.com/v2/LeadManagement.svc';
 		$url = $url_base. '/Leads.GetByQuickSearch?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey . '&key=' . $key ;
@@ -239,6 +246,7 @@ class Leadsquared_Api{
 		$name = $this->name;
 		return Leadsquared_Api::lsqcurlget($url,$name);
 	}
+
 	
 	public function lsqcurl($url,$json_data,$name)
 	{
