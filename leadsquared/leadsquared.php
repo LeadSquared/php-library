@@ -104,6 +104,13 @@ class Leadsquared_Api{
 		return Leadsquared_Api::lsqcurlget($url,$name);
 	}
 	
+	public function search_by_criteria($data){
+		$url_base = 'https://api.leadsquared.com/v2/LeadManagement.svc';
+		$url = $url_base. '/Leads.Get?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey;
+		$name = $this->name;
+		return Leadsquared_Api::lsqcurl($url,$name);
+	}
+	
 	public function get_activity_types(){
 		$url_base = 'https://api.leadsquared.com/v2/ProspectActivity.svc';
 		$url = $url_base. '/ActivityTypes.Get?accessKey=' . $this->accessKey . '&secretKey=' . $this->secretKey;
