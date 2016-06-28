@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			"Phone":"'.$Phone.'"
 			 }';
 			 
-	$leadsquared->update_lead($data,$leadId);
+	$leadsquared->convert_visitor($data,$leadId);
 }
 
 function test_input($data) {
